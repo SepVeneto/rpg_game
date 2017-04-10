@@ -183,7 +183,7 @@ for( i = 0; i &lt; 36; i += 1 )
                     }
                     
                 }
-                if( mouse_check_button_released(mb_right) &amp;&amp; item_site[i, ITEM_INDEX] )
+                if( mouse_check_button_released(mb_right) &amp;&amp; item_site[i, ITEM_INDEX] &amp;&amp; !global.trading_window_exists )
                 {
                     trading_items(i, BUY);
                 }

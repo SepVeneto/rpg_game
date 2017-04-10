@@ -49,7 +49,12 @@ y = 424;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( !instance_exists(obj_textbox) )
+            <string>if( global.trading_window_exists )
+{
+    exit;
+}
+
+if( !instance_exists(obj_textbox) )
 {
     if( position_meeting(mouse_x, mouse_y, id) &amp;&amp; mouse_check_button_pressed(mb_left) )
     {

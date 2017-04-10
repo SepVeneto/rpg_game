@@ -350,7 +350,7 @@ for( i = 0; i &lt; 36; i += 1 )
                     
                 }
                     
-                if( mouse_check_button_released(mb_right) &amp;&amp; item_site[i, ITEM_INDEX] )
+                if( mouse_check_button_released(mb_right) &amp;&amp; item_site[i, ITEM_INDEX] &amp;&amp; !global.trading_window_exists)
                 {
                     if( instance_exists(obj_shop) )
                     {
@@ -362,12 +362,12 @@ for( i = 0; i &lt; 36; i += 1 )
                     }
                 }
                      
-                if( mouse_check_button_pressed(mb_left) &amp;&amp; item_site[i, ITEM_INDEX] )
+                if( mouse_check_button_pressed(mb_left) &amp;&amp; item_site[i, ITEM_INDEX] &amp;&amp; !global.trading_window_exists )
                 {
                     item_drag = true;
                     item_drag_index = i;
                 }
-                if( mouse_check_button_released(mb_left) &amp;&amp; item_drag )
+                if( mouse_check_button_released(mb_left) &amp;&amp; item_drag &amp;&amp; !global.trading_window_exists)
                 {
                     item_drag = false;
                     switch_bagitem(item_drag_index, i);

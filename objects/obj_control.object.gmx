@@ -33,6 +33,7 @@ global.textbox_option2 = "";
 global.acquire_number = 0;
 global.acquire_index = 0;
 global.acquire_item[10] = 0;
+global.trading_window_exists = false;
 
 var i;
 for( i = 0; i &lt; 10; i += 1 )

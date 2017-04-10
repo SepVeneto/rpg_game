@@ -78,6 +78,10 @@
       <sprite>sprites\spr_lucky_once</sprite>
       <sprite>sprites\spr_lucky_tenth</sprite>
     </sprites>
+    <sprites name="button_effect">
+      <sprite>sprites\spr_button_ok</sprite>
+      <sprite>sprites\spr_button_abandon</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bk_room</background>

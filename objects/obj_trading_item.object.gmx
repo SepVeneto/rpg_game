@@ -34,6 +34,7 @@ max_limit = 0;
 trade_action = 0;
 choose_item = 0;
 depth = min(obj_shop.depth, obj_bag.depth) - 1;
+global.trading_window_exists = true;
 </string>
           </argument>
         </arguments>
@@ -64,6 +65,7 @@ acess = false;
 max_limit = 0;
 trade_action = 0;
 choose_item = 0;
+global.trading_window_exists = false;
 </string>
           </argument>
         </arguments>
