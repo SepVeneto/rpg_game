@@ -86,7 +86,9 @@ switch( global.choose_index )
 add_items(4,1);
 add_items(8,1);
 add_items(12,1);
+add_items(13, 1);
 add_items(23, 1);
+add_items(24, 1);
 
 // 初始化物品添加脚本
 global.acquire_number = 0;

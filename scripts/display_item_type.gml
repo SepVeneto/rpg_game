@@ -24,6 +24,15 @@ switch( item_type_index )
     case 4:
         item_type = "消耗品";
         break;
+    case 5:
+        item_type = "饰品";
+        break;
+    case 6:
+        item_type = "任务物品";
+        break;
+    case 7:
+        item_type = "杂物";
+        break;
 }
 return item_type;
 

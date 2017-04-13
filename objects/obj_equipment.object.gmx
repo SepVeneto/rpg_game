@@ -181,7 +181,7 @@ draw_text(x + 172, y + 107, Player.intellect);
 draw_text(x + 172, y + 168, Player.income);
 
 // 先遍历装备栏显示物品图标，防止物品信息显示框无法遮住物品图标
-for(i = 0; i &lt; 2; i += 1 )
+for(i = 0; i &lt; 3; i += 1 )
 {
     //if( item_drag_x != i  )
     {
@@ -198,11 +198,11 @@ for(i = 0; i &lt; 2; i += 1 )
 
 var max_width, text_length, text_height, text_type_length, item_type;
 // 遍历装备栏
-for( i = 0; i &lt; 2; i += 1 )
+for( i = 0; i &lt; 3; i += 1 )
 {
     if( !obj_bag.drag &amp;&amp; equip_data[i, ITEM_INDEX] != 421)
     {
-        if( mouse_in_relion( x+21, y+20+(i*34), x+21+34 , y+43+(i*34)+20 ) )
+        if( mouse_in_relion( x+21, y+28+(i*43), x+21+34 , y+28+(i*43)+34 ) )
         {
             if( obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_INDEX] )
             {
@@ -219,59 +219,59 @@ for( i = 0; i &lt; 2; i += 1 )
                 text_height = string_height(obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_DESCRIBE]);
                 text_type_length = string_length(item_type);
                 
-                if( x+34+max_width  &gt;= view_xview+640 ) 
+                if( x+21+34+max_width  &gt;= view_xview+640 ) 
                 {
                     // 绘制物品信息显示框
-                    draw_rectangle_colour(x+34-max_width, y+43+(i*34)+34, x+34, y+43+(i*34)+34+100+text_height*count, c_white, c_white, c_gray, c_gray, false);
+                    draw_rectangle_colour(x+21+34-max_width,y+28+(i*43)+34, x+21+34,y+28+(i*43)+34+100+text_height*count, c_white, c_white, c_gray, c_gray, false);
                     // 显示物品的描述
-                    draw_text(x+34+(max_width/2-20*(text_length/2))-max_width, y+43+(i*34)+34, obj_bag.item_data[equip_data[i,ITEM_INDEX], ITEM_DESCRIBE]);
+                    draw_text(x+21+34+(max_width/2-20*(text_length/2))-max_width,y+28+(i*43)+34, obj_bag.item_data[equip_data[i,ITEM_INDEX], ITEM_DESCRIBE]);
                     // 物品的种类
-                    draw_text(x+34-max_width+(max_width-text_type_length*20), y+43+(i*34)+34+30, item_type);
+                    draw_text(x+21+34-max_width+(max_width-text_type_length*20),y+28+(i*43)+34+30, item_type);
                     // 分割线
-                    draw_line_colour(x+34-max_width, y+43+(i*34)+34+30, x+34, y+43+(i*34)+34+30, c_teal, c_teal);
+                    draw_line_colour(x+21+34-max_width,y+28+(i*43)+34+30, x+21+34,y+28+(i*43)+34+30, c_teal, c_teal);
                     // 显示物品的属性
                     if( count-1 )
                     {
                         for( index = 0; index &lt; count; index += 1 )
                         {
-                            draw_text(x+34, y+43+(i*34)+34+50+text_height*index, variable[index]);
+                            draw_text(x+21+34,y+28+(i*43)+34+50+text_height*index, variable[index]);
                         }
                     }
                     else
                     {
-                        draw_text(x+34, y+43+(i*34)+34+50, obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_EFFECT]);
+                        draw_text(x+21+34,y+28+(i*43)+34+50, obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_EFFECT]);
                     }
                     // 分割线
-                    draw_line_colour(x+34, y+43+(i*34)+34+70+text_height*count, x+34, y+43+(i*34)+34+70+text_height*count, c_teal, c_teal);
+                    draw_line_colour(x+21+34,y+28+(i*43)+34+70+text_height*count, x+21+34,y+28+(i*43)+34+70+text_height*count, c_teal, c_teal);
                     // 显示物品的出售价格
-                    draw_text(x+34-max_width, y+43+(i*34)+34+80+text_height*count, string("出售价格：") + string(obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_VALUE]/4) );
+                    draw_text(x+21+34-max_width,y+28+(i*43)+34+80+text_height*count, string("出售价格：") + string(obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_VALUE]/4) );
                 }
                 else
                 {
                     // 绘制物品信息显示框
-                    draw_rectangle_colour(x+34, y+43+(i*34)+34, x+34+max_width, y+43+(i*34)+34+100+text_height*count, c_white, c_white, c_gray, c_gray, false);
+                    draw_rectangle_colour(x+21+34, y+28+(i*43)+34, x+21+34+max_width, y+28+(i*43)+34+100+text_height*count, c_white, c_white, c_gray, c_gray, false);
                     // 显示物品的描述
-                    draw_text(x+34+(max_width/2-20*(text_length/2)), y+43+(i*34)+34, obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_DESCRIBE]);
+                    draw_text(x+21+34+(max_width/2-20*(text_length/2)), y+28+(i*43)+34, obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_DESCRIBE]);
                     // 物品的种类
-                    draw_text(x+34+(max_width-text_type_length*20), y+43+(i*34)+34+30, item_type);
+                    draw_text(x+21+34+(max_width-text_type_length*20), y+28+(i*43)+34+30, item_type);
                     // 分割线
-                    draw_line_colour(x+34, y+43+(i*34)+34+30, x+34+max_width, y+43+(i*34)+34+30, c_teal, c_teal);
+                    draw_line_colour(x+21+34,y+28+(i*43)+34+30, x+21+34+max_width, y+28+(i*43)+34+30, c_teal, c_teal);
                     // 显示物品的属性
                     if( count-1 )
                     {
                         for( index = 0; index &lt; count; index += 1 )
                         {
-                            draw_text(x+34, y+43+(i*34)+34+50+text_height*index, variable[index]);
+                            draw_text(x+21+34, y+28+(i*43)+34+50+text_height*index, variable[index]);
                         }
                     }
                     else
                     {
-                        draw_text(x+34, y+43+(i*34)+34+50, obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_EFFECT]);
+                        draw_text(x+21+34, y+28+(i*43)+34+50, obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_EFFECT]);
                     }
                     // 分割线
-                    draw_line_colour(x+34, y+43+(i*34)+34+70+text_height*count, x+34+max_width, y+43+(i*34)+34+70+text_height*count, c_teal, c_teal);
+                    draw_line_colour(x+21+34, y+28+(i*43)+34+70+text_height*count, x+21+34+max_width,y+28+(i*43)+34+70+text_height*count, c_teal, c_teal);
                     // 显示物品的出售价格
-                    draw_text(x+34, y+43+(i*34)+34+80+text_height*count, string("出售价格：") + string(obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_VALUE]/4) );
+                    draw_text(x+21+34,y+28+(i*43)+34+80+text_height*count, string("出售价格：") + string(obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_VALUE]/4) );
                 }
                 // 当前格子有物体时，判断是否双击
                 if( mouse_check_button_released(mb_right) )

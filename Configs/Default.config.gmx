@@ -419,7 +419,7 @@
     <option_xbone_texture_page>1024</option_xbone_texture_page>
   </Options>
   <ConfigConstants>
-    <constants number="9">
+    <constants number="17">
       <constant name="ITEM_INDEX">0</constant>
       <constant name="ITEM_DESCRIBE">1</constant>
       <constant name="ITEM_EFFECT">2</constant>
@@ -429,6 +429,14 @@
       <constant name="ITEM_VALUE">6</constant>
       <constant name="BUY">-99</constant>
       <constant name="SELL">-100</constant>
+      <constant name="WEAPON_ONE_HAND">0</constant>
+      <constant name="WEAPON_TWO_HAND">1</constant>
+      <constant name="WEAPON_OFF_HAND">2</constant>
+      <constant name="TALENT">3</constant>
+      <constant name="CONSUMABLES">4</constant>
+      <constant name="DECORATION">5</constant>
+      <constant name="MISSION_ITEM">6</constant>
+      <constant name="SUNDRY">7</constant>
     </constants>
   </ConfigConstants>
 </Config>
