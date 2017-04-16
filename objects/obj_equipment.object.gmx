@@ -196,7 +196,7 @@ for(i = 0; i &lt; 3; i += 1 )
     }
 }
 
-var max_width, text_length, text_height, text_type_length, item_type;
+var max_width, text_length, text_height, text_type_length, item_type, temp_room;
 // 遍历装备栏
 for( i = 0; i &lt; 3; i += 1 )
 {
@@ -275,7 +275,13 @@ for( i = 0; i &lt; 3; i += 1 )
                 }
                 // 当前格子有物体时，判断是否双击
                 if( mouse_check_button_released(mb_right) )
-                {
+                { 
+                    /*temp_room = obj_bag.bag_room + 1;
+                    if( temp_room &gt;= 36 )
+                    {
+                        show_message("背包剩余空间不足");
+                        exit;
+                    }*/
                     var bi;
                     for( bi = 0; bi &lt; 36; bi += 1 )
                     {
@@ -287,11 +293,13 @@ for( i = 0; i &lt; 3; i += 1 )
                                 add_items(equip_data[i, ITEM_INDEX], 1);
                                 equip_data[1,0] = 0;
                                 equip_data[0,0] = 0;
+                                exit;
                             }
                             else
                             {
                                 add_items(equip_data[i, ITEM_INDEX], 1);
                                 equip_data[i,0] = 0;
+                                exit;
                             }
                         }         
                     }

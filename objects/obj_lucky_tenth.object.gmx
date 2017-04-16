@@ -55,21 +55,29 @@ with(obj_reward_remind)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var temp_item;
+            <string>var temp_item, temp_room;
 
 if( mouse_in_relion(x, y, x + 168, y + 48) &amp;&amp; mouse_check_button_released(mb_left) )
 {
+    temp_room = obj_bag.bag_room + 10;
+    if( temp_room &gt; 36 ) 
+    {
+        show_message("背包剩余空间不足");
+        exit;
+    }
+    if( obj_bag.player_money - 5000 &lt; 0 )
+    {
+        show_message("没有足够的金钱");
+        exit;
+    }
+    obj_bag.player_money -= 5000;
     for( i = 0; i &lt; 10; i += 1 )
     {
         temp_item = raffle();
         add_items(temp_item, 1);
-        if( obj_bag.bag_full )
-        {
-            show_message("背包满了");
-            exit;
-        }
         global.acquire_item[0] = 0;
     }
+    
     reward_remind();
 }
 

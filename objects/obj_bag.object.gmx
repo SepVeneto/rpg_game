@@ -41,6 +41,7 @@ item_effect = "";
 item_attribute = "";
 item_type = -1;
 item_value = 0;
+bag_room = 0;
 
 // 初始化物品信息
 var i, j, temp_string;
@@ -64,7 +65,7 @@ for( i = 0; i &lt; 36; i += 1 )
 
 // 加载物品的各种信息
 file = file_text_open_read(working_directory + "\item_data.txt");
-for( i = 1; i &lt;= 31; i += 1 )
+for( i = 1; i &lt;= 32; i += 1 )
 {
     temp_string = file_text_read_string(file)
     file_text_readln(file);
@@ -244,7 +245,7 @@ for( i = 0; i &lt; 36; i += 1 )
     // 显示物品图标
     draw_sprite(spr_items, item_data[item_site[i,ITEM_INDEX], ITEM_INDEX], x+8+j*32, y+40+floor(i/6)*32);
     // 只让消耗品显示数量
-    if( item_data[item_site[i,ITEM_INDEX], ITEM_INDEX] &lt;= 69 &amp;&amp; item_data[item_site[i,ITEM_INDEX], ITEM_INDEX] &gt;= 1 /*&amp;&amp; item_site[i, ITEM_NUM] != 1 */)
+    if( item_data[item_site[i, ITEM_INDEX], ITEM_TYPE] == 4 || item_data[item_site[i, ITEM_INDEX], ITEM_TYPE] == 7 )
     {
         draw_set_font(font_item_num);
         draw_set_colour(c_lime);

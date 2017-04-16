@@ -199,7 +199,6 @@ if( current_position == max_position &amp;&amp; sprite_exists(spr_choose_arrow) 
                     }
                     else
                     {
-                        obj_bag.player_money -= 200;
                         instance_destroy();
                         instance_create(640/2 + view_xview -240, 480/2 + view_yview - 160, obj_reward);
                     }

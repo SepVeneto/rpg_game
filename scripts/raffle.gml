@@ -5,31 +5,138 @@
 
 var probability_first, probability_second, raffle_index, item_index, temp;
 
+// 判断抽取的是哪一类物品
 probability_first = irandom_range(1, 100)
-if( probability_first <= 75 )
+// 20%单手、双手装备
+if( probability_first <= 20 )
 {
-    raffle_index = 4;
+    raffle_index = irandom(1);;
 }
-else if( probability_first <= 90 )
-{
-    raffle_index = irandom(1);
-}
-else
+// 8%副手装备
+else if( probability_first <= 28 )
 {
     raffle_index = 2;
 }
+// 15%消耗品
+else if( probability_first <= 43 )
+{
+    raffle_index = 4;
+}
+// 5%饰品
+else if( probability_first <= 48 )
+{
+    raffle_index = 5;
+}
+// 1%任务物品
+else if( probability_first <= 49 )
+{
+    raffle_index = 6;
+}
+// 51%杂物
+else
+{
+    raffle_index = 7;
+}
 
+// 判断在此类物品中抽取的物品
+probability_second = irandom_range(1, 100);
 switch( raffle_index )
 {
-    case 0:
-    case 1:
-        temp = choose(1, 2, 3, 14, 15);
+    case WEAPON_ONE_HAND:
+        if( probability_second <= 70 )
+        {
+            temp = choose(1, 5);
+        }
+        else if( probability_second <= 85 )
+        {
+            temp = choose(2, 6);
+        }
+        else if( probability_second <= 95 )
+        {
+            temp = choose(3, 7);
+        }
+        else
+        {
+            temp = choose(4, 8);
+        }
         break;
-    case 2:
-        temp = 16;
+    case WEAPON_TWO_HAND:
+        if( probability_second <= 70 )
+        {
+            temp = 9;
+        }
+        else if( probability_second <= 85 )
+        {
+            temp = 10;
+        }
+        else if( probability_second <= 95 )
+        {
+            temp = 11;
+        }
+        else
+        {
+            temp = 12;
+        }
         break;
-    case 4:
-        temp = irandom_range(4, 13);
+    case WEAPON_OFF_HAND:
+        temp = 13;
+        break;
+    case CONSUMABLES:
+        if( probability_second <= 80 )
+        {
+            temp = choose(14, 15, 16);
+        }
+        else if( probability_second <= 92 )
+        {
+            temp = choose(17, 18, 19);
+        }
+        else if( probability_second <= 99 )
+        {
+            temp = choose(20, 21, 22);
+        }
+        else
+        {
+            temp = 23;
+        }
+        break;
+    case DECORATION:
+        temp = 24;
+        break;
+    case MISSION_ITEM:
+        if( probability_second <= 40 )
+        {
+            temp = 28;
+        }
+        else if( probability_second <= 65 )
+        {
+            temp = 29;
+        }
+        else if( probability_second <= 85 )
+        {
+            temp = 25;
+        }
+        else if( probability_second <= 95 )
+        {
+            temp = 26;
+        }
+        else
+        {
+            temp = 27;
+        }
+        break;
+    case SUNDRY:
+        if( probability_second <= 60 )
+        {
+            temp = 30;
+        }
+        else if( probability_second <= 90 )
+        {
+            temp = 31;
+        }
+        else
+        {
+            temp = 32;
+        }
         break;
 }
 

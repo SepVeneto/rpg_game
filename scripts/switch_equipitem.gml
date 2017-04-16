@@ -6,6 +6,10 @@
 var temp;
 
 temp = obj_equipment.equip_data[argument1, ITEM_INDEX];
+if( obj_equipment.equip_data[argument1, ITEM_INDEX] )
+{
+    obj_bag.bag_room += 1;
+}
 obj_equipment.equip_data[argument1, ITEM_INDEX] = obj_bag.item_site[argument0, ITEM_INDEX];
 obj_bag.item_site[argument0, ITEM_INDEX] = temp;
 
