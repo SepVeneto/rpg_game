@@ -47,6 +47,7 @@ for( i = 0; i &lt; 36; i += 1 )
 add_items_shop(1);
 add_items_shop(2);
 add_items_shop(13);
+add_items_shop(30);
 </string>
           </argument>
         </arguments>
