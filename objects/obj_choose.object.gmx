@@ -30,7 +30,7 @@
     xiana = 1,
     zhi
 };   
-global.choose_index = 0;
+global.character_index = 0;
 
 max_width = 210;
 text_xiana ="----因与“天壤劫火”亚拉 斯特尔签订契约，成为“炎 发灼眼的讨伐者——夏娜”, 又称“炎发灼眼的杀手”。
@@ -73,12 +73,12 @@ else
 
 if( mouse_in_relion(100, 85, 270, 113) &amp;&amp; mouse_check_button(mb_left) )
 {
-    global.choose_index = character.xiana;
+    global.character_index = character.xiana;
     room_goto(rm_main);
 }
 else if( mouse_in_relion(350, 85, 520, 110) &amp;&amp; mouse_check_button(mb_left) )
 {
-    global.choose_index = character.zhi;
+    global.character_index = character.zhi;
     room_goto(rm_main);
 }
 

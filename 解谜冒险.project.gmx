@@ -46,6 +46,7 @@
         <sprite>sprites\spr_NPC2</sprite>
         <sprite>sprites\spr_NPC3</sprite>
         <sprite>sprites\spr_NPC4</sprite>
+        <sprite>sprites\spr_NPC5</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\spr_hitbox</sprite>
@@ -82,6 +83,7 @@
       <sprite>sprites\spr_button_ok</sprite>
       <sprite>sprites\spr_button_abandon</sprite>
     </sprites>
+    <sprite>sprites\spr_treasure_box</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bk_room</background>
@@ -117,6 +119,16 @@
       <script>scripts\trading_items.gml</script>
       <script>scripts\selling_item.gml</script>
       <script>scripts\buying_item.gml</script>
+    </scripts>
+    <scripts name="maze">
+      <script>scripts\init_wall.gml</script>
+      <script>scripts\maze_create.gml</script>
+      <script>scripts\make_maze.gml</script>
+      <script>scripts\search_path.gml</script>
+      <script>scripts\print_maze.gml</script>
+      <script>scripts\detection_path.gml</script>
+      <script>scripts\dfs.gml</script>
+      <script>scripts\detection_access.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -171,6 +183,7 @@
       <object>objects\obj_lucky_once</object>
       <object>objects\obj_lucky_tenth</object>
       <object>objects\obj_trading_item</object>
+      <object>objects\obj_maze_create</object>
     </objects>
     <objects name="NPCs">
       <object>objects\obj_test</object>
@@ -178,16 +191,20 @@
       <object>objects\obj_NPC2</object>
       <object>objects\obj_NPC3</object>
       <object>objects\obj_NPC4</object>
+      <object>objects\obj_NPC5</object>
     </objects>
     <object>objects\Character</object>
     <object>objects\Player</object>
     <object>objects\NPCs</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_dialoge</object>
+    <object>objects\obj_treasure_box</object>
+    <object>objects\object38</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_choose</room>
     <room>rooms\rm_main</room>
+    <room>rooms\rm_maze</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

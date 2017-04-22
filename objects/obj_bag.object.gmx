@@ -45,7 +45,7 @@ bag_room = 0;
 
 // 初始化物品信息
 var i, j, temp_string;
-for( i = 0; i &lt; 36; i += 1 )
+for( i = 0; i &lt; 38; i += 1 )
 {
     item_data[i, ITEM_INDEX] = 0;            // 物品编号
     item_data[i, ITEM_DESCRIBE] = "";        //物品描述
@@ -65,7 +65,7 @@ for( i = 0; i &lt; 36; i += 1 )
 
 // 加载物品的各种信息
 file = file_text_open_read(working_directory + "\item_data.txt");
-for( i = 1; i &lt;= 32; i += 1 )
+for( i = 1; i &lt;= 38; i += 1 )
 {
     temp_string = file_text_read_string(file)
     file_text_readln(file);
@@ -74,7 +74,7 @@ for( i = 1; i &lt;= 32; i += 1 )
 }
 file_text_close(file);
 
-switch( global.choose_index )
+switch( global.character_index )
 {
     case 1: player_money = obj_xiana.money;
             break;
@@ -83,14 +83,18 @@ switch( global.choose_index )
 }
 
 
+var i;
+for( i = 1; i &lt;= 19; i += 1 )
+{
 // 物品编号， 数量
-add_items(4,1);
-add_items(8,1);
-add_items(12,1);
-add_items(13, 1);
-add_items(23, 1);
-add_items(24, 1);
-add_items(30, 98);
+add_items(i,1);
+/*add_items(2,1);
+add_items(3,1);
+add_items(4, 1);
+add_items(5, 1);
+add_items(6, 1);
+add_items(7, 1);*/
+}
 
 // 初始化物品添加脚本
 global.acquire_number = 0;
@@ -296,7 +300,14 @@ for( i = 0; i &lt; 36; i += 1 )
                         // 物品显示框
                         draw_rectangle_colour(x+8+(j*32)+32-max_width, y+40+floor(i/6)*32+32, x+8+(j*32)+32, y+40+floor(i/6)*32+32+100+text_height*count, c_white, c_white, c_gray, c_gray, false);
                         // 物品的名字
-                        draw_text(x+8+(j*32)+32+(max_width/2-20*(text_length/2))-max_width, y+40+floor(i/6)*32+32, item_data[item_site[i, ITEM_INDEX],ITEM_DESCRIBE]);
+                        if( item_site[i, ITEM_INDEX] == 29 )
+                        {
+                            draw_text(x+8+(j*32)+32+(max_width/2-20*(text_length/2))+20*3-max_width, y+40+floor(i/6)*32+32, obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_DESCRIBE]);
+                        }
+                        else
+                        {
+                            draw_text(x+8+(j*32)+32+(max_width/2-20*(text_length/2))-max_width, y+40+floor(i/6)*32+32, obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_DESCRIBE]);
+                        }
                         // 物品的种类
                         draw_text(x+8+(j*32)+32-max_width+(max_width-text_type_length*20), y+40+floor(i/6)*32+32+30, item_type);
                         // 分割线
@@ -324,7 +335,14 @@ for( i = 0; i &lt; 36; i += 1 )
                         // 物品显示框
                         draw_rectangle_colour(x+8+(j*32)+32, y+40+floor(i/6)*32+32, x+8+(j*32)+32+max_width, y+40+floor(i/6)*32+32+100+text_height*count, c_white, c_white, c_gray, c_gray, false);
                         // 物品的名字
-                        draw_text(x+8+(j*32)+32+(max_width/2-20*(text_length/2)), y+40+floor(i/6)*32+32, item_data[item_site[i, ITEM_INDEX],ITEM_DESCRIBE]);
+                        if( item_site[i, ITEM_INDEX] == 29 )
+                        {
+                            draw_text(x+8+(j*32)+32+(max_width/2-20*(text_length/2)) + 20*3, y+40+floor(i/6)*32+32, obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_DESCRIBE]);
+                        }
+                        else
+                        {
+                            draw_text(x+8+(j*32)+32+(max_width/2-20*(text_length/2)), y+40+floor(i/6)*32+32, obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_DESCRIBE]);
+                        }
                         // 物品的种类
                         draw_text(x+8+(j*32)+32+(max_width-text_type_length*20), y+40+floor(i/6)*32+32+30, item_type);
                         // 分割线

@@ -419,7 +419,7 @@
     <option_xbone_texture_page>1024</option_xbone_texture_page>
   </Options>
   <ConfigConstants>
-    <constants number="17">
+    <constants number="18">
       <constant name="ITEM_INDEX">0</constant>
       <constant name="ITEM_DESCRIBE">1</constant>
       <constant name="ITEM_EFFECT">2</constant>
@@ -437,6 +437,7 @@
       <constant name="DECORATION">5</constant>
       <constant name="MISSION_ITEM">6</constant>
       <constant name="SUNDRY">7</constant>
+      <constant name="size">15</constant>
     </constants>
   </ConfigConstants>
 </Config>

@@ -78,6 +78,35 @@ if( !global.textboxopened )
     {
         image_index = 0;
     }
+    
+    
+    if( keyboard_check( vk_space) )
+    {
+        if( keyboard_check( ord('S') )  )
+        {
+            sprite_index = spr_xiana_front;
+            y += 12;
+        }
+        else if( keyboard_check( ord('A') ) )
+        {
+            sprite_index = spr_xiana_left;
+            x -= 12;
+        }
+        else if( keyboard_check( ord('W') ) )
+        {
+            sprite_index = spr_xiana_back;
+            y -= 12;
+        }
+        else if( keyboard_check( ord('D') ) )
+        {
+            sprite_index = spr_xiana_right;
+            x += 12;
+        }
+        else 
+        {
+            image_index = 0;
+        }
+    }
 }
 </string>
           </argument>

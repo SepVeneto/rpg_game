@@ -44,10 +44,29 @@ for( i = 0; i &lt; 36; i += 1 )
     item_site[i, ITEM_INDEX] = 0;
 }
 
-add_items_shop(1);
-add_items_shop(2);
-add_items_shop(13);
+for( i = 20; i &lt;= 38; i += 1 )
+{
+add_items_shop(i);
+}
+/*add_items_shop(28);
+add_items_shop(21)
+add_items_shop(20);
 add_items_shop(30);
+add_items_shop(22);
+add_items_shop(23);
+add_items_shop(24);
+add_items_shop(25);
+add_items_shop(26);
+add_items_shop(27);
+add_items_shop(29);
+add_items_shop(31);
+add_items_shop(32);
+add_items_shop(33);
+add_items_shop(34);
+add_items_shop(35);
+//add_items_shop(36);
+//add_items_shop(37);*/
+//add_items_shop(38);
 </string>
           </argument>
         </arguments>
@@ -147,50 +166,64 @@ for( i = 0; i &lt; 36; i += 1 )
     {
         j = 0;
     }
-        max_width = 200;
-        // 防止在拖动物品或拖动装备栏窗口时，显示物品信息
-        //if( !obj_equipment.drag &amp;&amp; obj_equipment.depth &gt;= obj_bag.depth)
+    max_width = 200;
+    // 当鼠标指向物品时，显示物品的详细信息
+    if( mouse_in_relion( x+8+(j*32), y+40+floor(i/6)*32, x+8+(j*32)+32, y+40+floor(i/6)*32+32 ) )
+    {
+        if( item_site[i, ITEM_INDEX] )
         {
-            // 当鼠标指向物品时，显示物品的详细信息
-            if( mouse_in_relion( x+8+(j*32), y+40+floor(i/6)*32, x+8+(j*32)+32, y+40+floor(i/6)*32+32 ) )
+            var index, item_type;
+            index =  0;
+            count = separate_attribute(obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_EFFECT]);
+            item_type = display_item_type(obj_bag.item_data[item_site[i, ITEM_INDEX], ITEM_TYPE]);
+            if( !count )
             {
-                if( item_site[i, ITEM_INDEX] )
+                        count = 1;
+            }
+            text_length = string_length(obj_bag.item_data[item_site[i,  ITEM_INDEX], ITEM_DESCRIBE]);
+            text_height = string_height(obj_bag.item_data[item_site[i,  ITEM_INDEX], ITEM_DESCRIBE]);
+            text_type_length = string_length(item_type);
+            // 显示物品选中框
+            draw_rectangle_colour(x+8+(j*32), y+40+floor(i/6)*32, x+8+(j*32)+32, y+40+floor(i/6)*32+32, c_fuchsia, c_fuchsia, c_fuchsia, c_fuchsia, true);
+
+            // 物品显示框
+            draw_rectangle_colour(x+8+(j*32)+32, y+40+floor(i/6)*32+32, x+8+(j*32)+32+max_width, y+40+floor(i/6)*32+32+100+text_height*count, c_white, c_white, c_gray, c_gray, false);
+            // 物品的名字
+            if( item_site[i, ITEM_INDEX] == 29 )
+            {
+                draw_text(x+8+(j*32)+32+(max_width/2-20*(text_length/2)) + 20*3, y+40+floor(i/6)*32+32, obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_DESCRIBE]);
+            }
+            else
+            {
+                draw_text(x+8+(j*32)+32+(max_width/2-20*(text_length/2)), y+40+floor(i/6)*32+32, obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_DESCRIBE]);
+            }
+            // 物品的种类
+            draw_text(x+8+(j*32)+32+(max_width-text_type_length*20), y+40+floor(i/6)*32+32+30, item_type);
+            // 分割线
+            draw_line_colour(x+8+(j*32)+32, y+40+floor(i/6)*32+32+30, x+8+(j*32)+32+max_width, y+40+floor(i/6)*32+32+30, c_teal, c_teal);
+            // 物品的详细信息
+            if( count-1 )
+            {
+                for( index = 0; index &lt; count; index += 1)
                 {
-                    text_length = string_length(obj_bag.item_data[item_site[i,  ITEM_INDEX], ITEM_DESCRIBE]);
-                    if( x+8+( i*32 )+max_width+5  &gt; view_xview+640 ) 
-                    {   
-                        // 显示物品选中框
-                        draw_rectangle_colour(x+8+(j*32), y+40+floor(i/6)*32, x+8+(j*32)+32, y+40+floor(i/6)*32+32, c_fuchsia, c_fuchsia, c_fuchsia, c_fuchsia, true);
-                        // 绘制物品信息显示框
-                        draw_rectangle_colour(x+8+( j*32 )+32-max_width, y+40+floor(i/6)*32+32, x+8+(j*32)+32, y+40+floor(i/6)*32+32+100, c_white, c_white, c_gray, c_gray, false);
-                        // 显示物品的描述
-                        draw_text(x+8+(j*32)+32-max_width+(max_width/2-20*(text_length/2)), y+40+floor(i/6)*32+32, obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_DESCRIBE]);
-                        // 分割线
-                        draw_line_colour(x+8+(j*32)+32-max_width, y+40+floor(i/6)*32+32+30, x+8+(j*32)+32, y+40+floor(i/6)*32+32+30, c_teal, c_teal);
-                        // 显示物品的属性
-                        draw_text(x+8+(j*32)+32-max_width, y+40+floor(i/6)*32+32+50, obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_EFFECT]);
-                        // 显示物品的价值
-                        draw_text(x+8+(j*32)+32-max_width, y+40+floor(i/6)*32+32+80, string("购买价格：")+string(obj_bag.item_data[item_site[i, ITEM_INDEX], ITEM_VALUE]) );
-                    }
-                    else
-                    {
-                        // 显示物品选中框
-                        draw_rectangle_colour(x+8+(j*32), y+40+floor(i/6)*32, x+8+(j*32)+32, y+40+floor(i/6)*32+32, c_fuchsia, c_fuchsia, c_fuchsia, c_fuchsia, true);
-                        draw_rectangle_colour(x+8+(j*32)+32, y+40+floor(i/6)*32+32, x+8+(j*32)+32+max_width, y+40+floor(i/6)*32+32+100, c_white, c_white, c_gray, c_gray, false);
-                        draw_text(x+8+(j*32)+32+(max_width/2-20*(text_length/2)), y+40+floor(i/6)*32+32, obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_DESCRIBE]);
-                        draw_line_colour(x+8+(j*32)+32, y+40+floor(i/6)*32+32+30, x+8+(j*32)+32+max_width, y+40+floor(i/6)*32+32+30, c_teal, c_teal);
-                        draw_text(x+8+(j*32)+32, y+40+floor(i/6)*32+32+50, obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_EFFECT]);
-                        draw_text(x+8+(j*32)+32, y+40+floor(i/6)*32+32+80, string("购买价格：")+string(obj_bag.item_data[item_site[i, ITEM_INDEX], ITEM_VALUE]) );
-                    }
-                    
-                }
-                if( mouse_check_button_released(mb_right) &amp;&amp; item_site[i, ITEM_INDEX] &amp;&amp; !global.trading_window_exists )
-                {
-                    trading_items(i, BUY);
+                    draw_text(x+8+(j*32)+32, y+40+floor(i/6)*32+32+50+string_height(variable[index])*index, variable[index]);//obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_EFFECT]
                 }
             }
-            j += 1;
+            else
+            {
+                draw_text(x+8+(j*32)+32, y+40+floor(i/6)*32+32+50, obj_bag.item_data[item_site[i, ITEM_INDEX],ITEM_EFFECT]);               
+            }
+            // 分割线
+            draw_line_colour(x+8+(j*32)+32, y+40+floor(i/6)*32+32+70+text_height*count, x+8+(j*32)+32+max_width, y+40+floor(i/6)*32+32+70+text_height*count, c_teal, c_teal);
+            // 显示物品的购买价格
+            draw_text(x+8+(j*32)+32, y+40+floor(i/6)*32+32+80+text_height*count, string("购买价格：")+string(obj_bag.item_data[item_site[i, ITEM_INDEX], ITEM_VALUE]) );
         }
+        if( mouse_check_button_released(mb_right) &amp;&amp; item_site[i, ITEM_INDEX] &amp;&amp; !global.trading_window_exists )
+        {
+            trading_items(i, BUY);
+        }
+    }
+    j += 1;
 }
 </string>
           </argument>

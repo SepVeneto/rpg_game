@@ -79,63 +79,78 @@ switch( raffle_index )
         }
         break;
     case WEAPON_OFF_HAND:
-        temp = 13;
+        temp = choose(13, 14, 15, 16);
         break;
     case CONSUMABLES:
         if( probability_second <= 80 )
         {
-            temp = choose(14, 15, 16);
+            temp = choose(17, 18, 19);
         }
         else if( probability_second <= 92 )
         {
-            temp = choose(17, 18, 19);
+            temp = choose(20, 21, 22);
         }
         else if( probability_second <= 99 )
         {
-            temp = choose(20, 21, 22);
+            temp = choose(23, 24, 25);
         }
         else
         {
-            temp = 23;
+            temp = 26;
         }
         break;
     case DECORATION:
-        temp = 24;
+        if( probability_second <= 40 )
+        {
+            temp = 27;
+        }
+        else if( probability_second <= 70 )
+        {
+            temp = 28;
+        }
+        else if( probability_second <= 95 )
+        {
+            temp = 29;
+        }
+        else
+        {
+            temp = 30;
+        }
         break;
     case MISSION_ITEM:
         if( probability_second <= 40 )
         {
-            temp = 28;
+            temp = 31;
         }
         else if( probability_second <= 65 )
         {
-            temp = 29;
+            temp = 32;
         }
         else if( probability_second <= 85 )
         {
-            temp = 25;
+            temp = 33;
         }
         else if( probability_second <= 95 )
         {
-            temp = 26;
+            temp = 34;
         }
         else
         {
-            temp = 27;
+            temp = 35;
         }
         break;
     case SUNDRY:
         if( probability_second <= 60 )
         {
-            temp = 30;
+            temp = 36;
         }
         else if( probability_second <= 90 )
         {
-            temp = 31;
+            temp = 37;
         }
         else
         {
-            temp = 32;
+            temp = 38;
         }
         break;
 }

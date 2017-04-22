@@ -61,6 +61,14 @@ text[1] = "%        ~愿意，开始吧%        不愿意，离开`";
         image_index = Player.sprite_index;
         textbox_choose(text[0]+text[1], "", "", c_white, -1);
     }
+    if( !instance_exists(obj_textbox_choose) )
+    {
+        if( global.choose_index == 1 )
+        {
+            instance_create(640/2 + view_xview -240, 480/2 + view_yview - 160, obj_reward);
+            global.choose_index = 0;
+        }
+    }
 }
 else
 {

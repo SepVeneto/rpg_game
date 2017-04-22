@@ -52,7 +52,7 @@ global.view_yviewprevious = view_yview;
             <string>global.view_xviewprevious = view_xview;
 global.view_yviewprevious = view_yview;
 
-switch( global.choose_index )
+switch( global.character_index )
 {
     case 1: play_object = obj_xiana;
             break;

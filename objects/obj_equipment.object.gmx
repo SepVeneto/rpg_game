@@ -223,8 +223,15 @@ for( i = 0; i &lt; 3; i += 1 )
                 {
                     // 绘制物品信息显示框
                     draw_rectangle_colour(x+21+34-max_width,y+28+(i*43)+34, x+21+34,y+28+(i*43)+34+100+text_height*count, c_white, c_white, c_gray, c_gray, false);
-                    // 显示物品的描述
-                    draw_text(x+21+34+(max_width/2-20*(text_length/2))-max_width,y+28+(i*43)+34, obj_bag.item_data[equip_data[i,ITEM_INDEX], ITEM_DESCRIBE]);
+                    // 显示物品的名字
+                    if( equip_data[i, ITEM_INDEX] == 29 )
+                    {
+                        draw_text(x+21+34+(max_width/2-20*(text_length/2))-max_width + 20*3, y+28+(i*43)+34, obj_bag.item_data[equip_data[i, ITEM_INDEX],ITEM_DESCRIBE]);
+                    }
+                    else
+                    {
+                        draw_text(x+21+34+(max_width/2-20*(text_length/2))-max_width, y+28+(i*43)+34, obj_bag.item_data[equip_data[i, ITEM_INDEX],ITEM_DESCRIBE]);
+                    }
                     // 物品的种类
                     draw_text(x+21+34-max_width+(max_width-text_type_length*20),y+28+(i*43)+34+30, item_type);
                     // 分割线
@@ -250,8 +257,15 @@ for( i = 0; i &lt; 3; i += 1 )
                 {
                     // 绘制物品信息显示框
                     draw_rectangle_colour(x+21+34, y+28+(i*43)+34, x+21+34+max_width, y+28+(i*43)+34+100+text_height*count, c_white, c_white, c_gray, c_gray, false);
-                    // 显示物品的描述
-                    draw_text(x+21+34+(max_width/2-20*(text_length/2)), y+28+(i*43)+34, obj_bag.item_data[equip_data[i, ITEM_INDEX], ITEM_DESCRIBE]);
+                    // 显示物品的名字
+                    if( equip_data[i, ITEM_INDEX] == 29 )
+                    {
+                        draw_text(x+21+34+(max_width/2-20*(text_length/2)) + 20*3, y+28+(i*43)+34, obj_bag.item_data[equip_data[i, ITEM_INDEX],ITEM_DESCRIBE]);
+                    }
+                    else
+                    {
+                        draw_text(x+21+34+(max_width/2-20*(text_length/2)), y+28+(i*43)+34, obj_bag.item_data[equip_data[i, ITEM_INDEX],ITEM_DESCRIBE]);
+                    }
                     // 物品的种类
                     draw_text(x+21+34+(max_width-text_type_length*20), y+28+(i*43)+34+30, item_type);
                     // 分割线
@@ -276,12 +290,6 @@ for( i = 0; i &lt; 3; i += 1 )
                 // 当前格子有物体时，判断是否双击
                 if( mouse_check_button_released(mb_right) )
                 { 
-                    /*temp_room = obj_bag.bag_room + 1;
-                    if( temp_room &gt;= 36 )
-                    {
-                        show_message("背包剩余空间不足");
-                        exit;
-                    }*/
                     var bi;
                     for( bi = 0; bi &lt; 36; bi += 1 )
                     {
@@ -293,15 +301,13 @@ for( i = 0; i &lt; 3; i += 1 )
                                 add_items(equip_data[i, ITEM_INDEX], 1);
                                 equip_data[1,0] = 0;
                                 equip_data[0,0] = 0;
-                                exit;
                             }
                             else
                             {
                                 add_items(equip_data[i, ITEM_INDEX], 1);
                                 equip_data[i,0] = 0;
-                                exit;
                             }
-                        }         
+                        }       
                     }
                     calculate_data();
                 }
