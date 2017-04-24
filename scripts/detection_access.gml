@@ -44,10 +44,9 @@ for( i = 0; i < 4; i += 1 )
 }
 if( count != 2 )
 {
-    access = false;
-    exit
+    return false;
 }
 else
 {
-    access = true;
+     return true;
 }

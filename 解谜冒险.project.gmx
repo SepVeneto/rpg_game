@@ -101,6 +101,7 @@
     <script>scripts\separate_information.gml</script>
     <script>scripts\separate_number.gml</script>
     <script>scripts\raffle.gml</script>
+    <script>scripts\init_objdata.gml</script>
     <scripts name="bagUI">
       <script>scripts\give_items.gml</script>
       <script>scripts\add_items.gml</script>
@@ -129,6 +130,7 @@
       <script>scripts\detection_path.gml</script>
       <script>scripts\dfs.gml</script>
       <script>scripts\detection_access.gml</script>
+      <script>scripts\character_direction.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -163,6 +165,7 @@
     <objects name="main_room">
       <object>objects\obj_control</object>
       <object>objects\viewcontrol</object>
+      <object>objects\obj_mission_status</object>
     </objects>
     <objects name="windows">
       <object>objects\obj_bag_button</object>
@@ -199,7 +202,7 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_dialoge</object>
     <object>objects\obj_treasure_box</object>
-    <object>objects\object38</object>
+    <object>objects\obj_esc</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_choose</room>

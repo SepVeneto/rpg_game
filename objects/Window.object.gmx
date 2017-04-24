@@ -32,6 +32,8 @@ xoff = 0;
 yoff = 0;
 
 timer = 0;
+
+persistent = true;
 </string>
           </argument>
         </arguments>

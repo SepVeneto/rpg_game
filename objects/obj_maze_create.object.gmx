@@ -37,7 +37,7 @@ for( i = 0; i &lt;= size*2 + 2; i += 1 )
 
 maze_create();
 
-detection_access();
+access = detection_access();
 while( !access )
 {
     for( i = 0; i &lt;= size*2 + 2; i += 1 )

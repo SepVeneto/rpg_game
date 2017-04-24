@@ -82,6 +82,17 @@ global.textbox_text = "";
 Player.image_speed = 0.35;
 // 结束对话后，激活所有UI
 instance_activate_object(Button);
+/*switch( global.choose_index )
+{
+    case 1:
+        if( global.choose_index == 1 )
+        {
+            global.choose_index = 0;
+            Player.image_index = 3;
+            room_goto(rm_maze);
+        }
+        break;
+}*/
 </string>
           </argument>
         </arguments>

@@ -52,9 +52,8 @@
   </views>
   <instances>
     <instance objName="obj_maze_create" x="0" y="0" name="inst_2F22B564" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_control" x="32" y="0" name="inst_23C5BAEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="viewcontrol" x="64" y="0" name="inst_E43B7751" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object38" x="0" y="160" name="inst_ED173AD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_esc" x="0" y="160" name="inst_ED173AD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="viewcontrol" x="32" y="0" name="inst_46B4A168" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

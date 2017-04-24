@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>Player.image_speed = 0;
-reward_surface = surface_create(640, 480);
+reward_surface = surface_create(267, 102);
 surface_set_target(reward_surface);
 draw_clear_alpha(0,0);
 surface_reset_target();
@@ -42,7 +42,7 @@ if( instance_exists(obj_lucky_once) )
     depth = obj_lucky_once.depth - 1;
 }
 
-global.textboxopened = true;
+//global.textboxopened = true;
 var i;
 for( i = 0; i &lt; 10; i += 1 )
 {
@@ -158,7 +158,7 @@ while( current_position &lt; max_position )
         default :
         draw_x += 20;
         surface_set_target(reward_surface);
-        draw_text(view_xview +175+110+draw_x, view_yview +165+45+draw_y, per_letter);
+        draw_text(/*view_xview+x +175+110*/80+draw_x, /*view_yview+y +165+45*/ 45+draw_y, per_letter);
         surface_reset_target();
     }
     current_position += 1;
@@ -196,7 +196,7 @@ if( current_position == max_position )
           <argument>
             <kind>1</kind>
             <string>draw_sprite(spr_remind, image_index, x, y);
-draw_surface(reward_surface, 0, 0);
+draw_surface(reward_surface, x, y);
 draw_sprite(spr_items, obj_bag.item_data[new_item,ITEM_INDEX], x + 115, y + 10);
 
 </string>

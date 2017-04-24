@@ -11,4 +11,4 @@ for( i = 0; i <= size * 2 + 2; i += 1 )
     }
 }
 
-//instance_create(end_x*32, end_y*32, obj_treasure_box);
+instance_create(end_x*32, end_y*32, obj_treasure_box);

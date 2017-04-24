@@ -88,12 +88,6 @@ for( i = 1; i &lt;= 19; i += 1 )
 {
 // 物品编号， 数量
 add_items(i,1);
-/*add_items(2,1);
-add_items(3,1);
-add_items(4, 1);
-add_items(5, 1);
-add_items(6, 1);
-add_items(7, 1);*/
 }
 
 // 初始化物品添加脚本

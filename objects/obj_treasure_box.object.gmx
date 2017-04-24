@@ -62,12 +62,6 @@ if( place_meeting(x, y, HappenBox) )
         box_opened = true;
     }
 }
-
-//保证NPC在非对话状态时，始终面朝玩家
-if( !global.textboxopened )
-{
-    image_index = 0;
-}
 </string>
           </argument>
         </arguments>

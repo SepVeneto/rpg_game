@@ -60,10 +60,13 @@ text[1] = "%        ~是%        不想`";
         image_index = Player.sprite_index;
         textbox_choose(text[0]+text[1], "", "", c_white, -1);
     }
-    if( global.choose_index == 1 )
+    if( !instance_exists(obj_textbox_choose) )
     {
-        global.choose_index = 0;
-        room_goto(rm_maze);
+        if( global.choose_index == 1 )
+        {
+            global.choose_index = 0;
+            room_goto(rm_maze);
+        }
     }
 }
 else
@@ -93,5 +96,8 @@ if( !global.textboxopened )
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>16,42</point>
+    <point>24,24</point>
+  </PhysicsShapePoints>
 </object>

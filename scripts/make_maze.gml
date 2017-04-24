@@ -19,18 +19,22 @@ switch( dir_origin )
     case dir_index.up:
         origin_x = irandom_range(2,size);
         origin_y = 1;
+        character_direction(dir_index.up);
         break;
     case dir_index.right:
         origin_x = 2*size+1;
         origin_y = irandom_range(2,size);
+        character_direction(dir_index.right);
         break;
     case dir_index.down:
         origin_x = irandom_range(2,size);
         origin_y = 2*size+1;
+        character_direction(dir_index.down);
         break;
     case dir_index.left:
         origin_x = 1;
         origin_y = irandom_range(2,size);
+        character_direction(dir_index.left);
         break;
 }
 
@@ -55,8 +59,6 @@ switch( dir_end )
 }
 map[origin_x,origin_y] = 0;
 map[end_x,end_y] = 0;
-//show_message(string(end_x)+","+string(end_y));
-
-
-//random_set_seed(current_time);
+Player.x = origin_x*32+16;
+Player.y = origin_y*32+16;
 search_path(irandom_range(2,size), irandom_range(2,size));

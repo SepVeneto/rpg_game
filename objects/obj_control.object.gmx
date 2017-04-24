@@ -35,6 +35,7 @@ global.acquire_index = 0;
 global.acquire_item[10] = 0;
 global.trading_window_exists = false;
 global.choose_index = 0;
+//global.character_index = 0;
 
 var i;
 for( i = 0; i &lt; 10; i += 1 )
@@ -43,94 +44,32 @@ for( i = 0; i &lt; 10; i += 1 )
 }
 
 window_set_cursor(cr_default);
-switch( global.character_index )
+if( !instance_exists( obj_xiana ) &amp;&amp; !instance_exists( obj_zhi) )
 {
-    case 1: 
-            instance_create(32, 416, obj_xiana);
-            if( instance_exists(obj_maze_create) )
-            {
-                Player.x = 32*obj_maze_create.origin_x + 10;
-                Player.y = 32*obj_maze_create.origin_y + 10;
-            }
-            break;
-    case 2: 
-            instance_create(32, 416, obj_zhi);
-            if( instance_exists(obj_maze_create) )
-            {
-                Player.x = 32*obj_maze_create.origin_x + 10;
-                Player.y = 32*obj_maze_create.origin_y + 10;
-            }
-            break;
-    default: exit;
+    switch( global.character_index )
+    {
+        case 1: 
+                instance_create(64, 128, obj_xiana);
+                if( instance_exists(obj_maze_create) )
+                {
+                    Player.x = 32*obj_maze_create.origin_x + 10;
+                    Player.y = 32*obj_maze_create.origin_y + 10;
+                }
+                break;
+        case 2: 
+                instance_create(64, 128, obj_zhi);
+                if( instance_exists(obj_maze_create) )
+                {
+                    Player.x = 32*obj_maze_create.origin_x + 10;
+                    Player.y = 32*obj_maze_create.origin_y + 10;
+                }
+                break;
+        default: exit;
+    }
 }
 
 global.mission_index = -1;
 
-global.mission[0,0] = "寻找伊澄";
-global.mission[0,1] = "在附近转转，说不定会有什么发现";
-global.mission[0,2] = 0;
-global.mission[0,3] = 1;
-global.mission[0,4] = 0;
-
-global.mission[1,0] = "拜访村长";
-global.mission[1,1] = "初来乍到,先去拜访一下村长";
-global.mission[1,2] = 1;
-global.mission[1,3] = 1;
-global.mission[1,4] = 0;
-
-global.mission[2,0] = "";
-global.mission[2,1] = "";
-global.mission[2,2] = 0;
-global.mission[2,3] = 1;
-global.mission[2,4] = 0;
-
-global.mission[3,0] = "";
-global.mission[3,1] = "";
-global.mission[3,2] = 0;
-global.mission[3,3] = 1;
-global.mission[3,4] = 0;
-
-global.mission[2,0] = "";
-global.mission[2,1] = "";
-global.mission[2,2] = 0;
-global.mission[2,3] = 1;
-global.mission[2,4] = 0;
-
-global.mission[4,0] = "";
-global.mission[4,1] = "";
-global.mission[4,2] = 0;
-global.mission[4,3] = 1;
-global.mission[4,4] = 0;
-
-global.mission[5,0] = "";
-global.mission[5,1] = "";
-global.mission[5,2] = 0;
-global.mission[5,3] = 1;
-global.mission[5,4] = 0;
-
-global.mission[6,0] = "";
-global.mission[6,1] = "";
-global.mission[6,2] = 0;
-global.mission[6,3] = 1;
-global.mission[6,4] = 0;
-
-global.mission[7,0] = "";
-global.mission[7,1] = "";
-global.mission[7,2] = 0;
-global.mission[7,3] = 1;
-global.mission[7,4] = 0;
-
-global.mission[8,0] = "";
-global.mission[8,1] = "";
-global.mission[8,2] = 0;
-global.mission[8,3] = 1;
-global.mission[8,4] = 0;
-
-global.mission[9,0] = "";
-global.mission[9,1] = "";
-global.mission[9,2] = 0;
-global.mission[9,3] = 1;
-global.mission[9,4] = 0;
 </string>
           </argument>
         </arguments>
@@ -154,16 +93,7 @@ global.mission[9,4] = 0;
           <argument>
             <kind>1</kind>
             <string>draw_text(Player.x, Player.y, string(view_xview)+","+string(view_yview));
-
-draw_text(Player.x, Player.y + 50, string(mouse_x)+","+string(mouse_y));
-
 draw_text(Player.x, Player.y + 125, string( mouse_x - view_xview ) +"," + string( mouse_y - view_yview) );
-
-/*draw_text(Player.x, Player.y + 150, string(global.acquire_item[0]));
-draw_text(Player.x + 20, Player.y + 150, string(global.acquire_item[1]));
-draw_text(Player.x + 40, Player.y + 150, string(global.acquire_item[2]));
-draw_text(Player.x, Player.y + 175, string(global.acquire_number));
-draw_text(Player.x, Player.y + 200, string(instance_exists(obj_reward_remind)));*/
 
 if( instance_exists(obj_lucky_once) )
 {

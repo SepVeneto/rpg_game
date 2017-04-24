@@ -27,6 +27,11 @@
             <kind>1</kind>
             <string>image_speed = 0.35;
 current_character = "";
+persistent = true;
+
+force = 10;
+intellect = 10;
+income = 200;
 
 if( instance_exists(obj_xiana) )
 {
@@ -38,10 +43,6 @@ else if( instance_exists(obj_zhi) )
     instance_create(x, y, obj_ChaHappenBoxZhi);
     current_character = "三千院凪";
 }
-
-force = 10;
-intellect = 10;
-income = 200;
 </string>
           </argument>
         </arguments>
