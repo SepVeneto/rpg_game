@@ -7,6 +7,11 @@ for( i = 0; i <= size * 2 + 2; i += 1 )
         if( map[i,j] == 1 )
         {
             instance_create(32*i, 32*j, obj_wall);
+            obj_wall.image_index = 1;
+        }
+        else if( map[i,j] == 0 )
+        {
+            instance_create(32*i, 32*j, obj_path);
         }
     }
 }

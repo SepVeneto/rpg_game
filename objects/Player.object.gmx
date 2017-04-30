@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.35;
+            <string>image_speed = 0.15;
 current_character = "";
 persistent = true;
 

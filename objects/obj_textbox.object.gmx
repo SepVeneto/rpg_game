@@ -74,7 +74,7 @@ colour = c_white;
             <kind>1</kind>
             <string>surface_free(textbox_surface1);
 global.textbox_text = "";
-Player.image_speed = 0.35;
+Player.image_speed = 0.15;
 // 结束对话后，激活所有UI
 instance_activate_object(Button);
 

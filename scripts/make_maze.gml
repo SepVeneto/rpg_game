@@ -60,5 +60,5 @@ switch( dir_end )
 map[origin_x,origin_y] = 0;
 map[end_x,end_y] = 0;
 Player.x = origin_x*32+16;
-Player.y = origin_y*32+16;
+Player.y = origin_y*32+28;
 search_path(irandom_range(2,size), irandom_range(2,size));

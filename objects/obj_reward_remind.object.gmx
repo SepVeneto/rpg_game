@@ -86,7 +86,7 @@ draw_y = 0;
           <argument>
             <kind>1</kind>
             <string>surface_free(reward_surface);
-Player.image_speed = 0.35;
+Player.image_speed = 0.15;
 
 instance_activate_object(obj_reward);
 instance_activate_object(obj_lucky_once);

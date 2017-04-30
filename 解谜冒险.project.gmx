@@ -47,6 +47,7 @@
         <sprite>sprites\spr_NPC3</sprite>
         <sprite>sprites\spr_NPC4</sprite>
         <sprite>sprites\spr_NPC5</sprite>
+        <sprite>sprites\spr_NPC6</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\spr_hitbox</sprite>
@@ -57,6 +58,8 @@
       <sprite>sprites\spr_border_zhi</sprite>
       <sprite>sprites\spr_textbox</sprite>
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_path</sprite>
+      <sprite>sprites\spr_barrier</sprite>
     </sprites>
     <sprites name="windows">
       <sprite>sprites\spr_bag</sprite>
@@ -195,11 +198,16 @@
       <object>objects\obj_NPC3</object>
       <object>objects\obj_NPC4</object>
       <object>objects\obj_NPC5</object>
+      <object>objects\obj_NPC6</object>
+    </objects>
+    <objects name="Barriers">
+      <object>objects\obj_wall</object>
+      <object>objects\obj_path</object>
+      <object>objects\obj_barrier</object>
     </objects>
     <object>objects\Character</object>
     <object>objects\Player</object>
     <object>objects\NPCs</object>
-    <object>objects\obj_wall</object>
     <object>objects\obj_dialoge</object>
     <object>objects\obj_treasure_box</object>
     <object>objects\obj_esc</object>
