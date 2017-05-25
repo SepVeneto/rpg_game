@@ -181,7 +181,7 @@ for( i = 0; i &lt; 5; i += 1 )
             draw_text(x + 14, y + 22+45*j, global.mission[mission_bar[j], 0]); // 任务标题
             draw_text(x + 180, y + 22 +45*j, "("+string(global.mission[mission_bar[j],4])+
                       "/"+string(global.mission[mission_bar[j],3])+")");        // 任务的完成情况
-            if( mouse_in_relion(x + 14, y + 22 + 45*j, x+14+string_width(global.mission[mission_bar[j],0]), y + 22 + 45*j + string_height(global.mission[mission_bar[j],0])) )
+            if( mouse_in_relion(x + 14, y + 22 + 45*j, x+14+210, y + 22 + 45*j + string_height(global.mission[mission_bar[j],0])) )
             {
                 draw_surface(surface_mission_describe[mission_bar[j]], x, y);
             }

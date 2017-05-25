@@ -1,3 +1,4 @@
+///textbox_choose(text, choose1_text, choose2_text, c_colour, mission_index);
 /*
      argument0: text
      argument1: 选项1的后续对话

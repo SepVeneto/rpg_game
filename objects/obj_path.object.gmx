@@ -29,6 +29,7 @@
 if( place_meeting(x, y -1, obj_wall) )
 {
     image_index = 1;
+    instance_create(x, y, obj_wall_hitbox);
 }
 </string>
           </argument>

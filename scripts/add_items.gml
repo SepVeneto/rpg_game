@@ -1,3 +1,4 @@
+///add_items(item_data_index, item_num);
 /*
     argument0 = 物品在item_data中的序号
     arguemnt1 = 物品的数量

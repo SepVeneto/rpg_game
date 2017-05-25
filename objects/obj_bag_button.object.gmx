@@ -25,9 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = view_xview + 550;
+            <string>event_inherited();
+x = view_xview + 550;
 y = view_yview + 424;
 
+if( !instance_exists(obj_bag) )
+{
+    instance_create(0, 0, obj_bag);
+}
 </string>
           </argument>
         </arguments>

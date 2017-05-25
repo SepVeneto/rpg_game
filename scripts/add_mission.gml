@@ -1,3 +1,4 @@
+///add_mission(mission_index);
 /*
     argument0: 接受任务的编号
 */

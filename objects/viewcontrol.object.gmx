@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>global.view_xviewprevious = view_xview;
 global.view_yviewprevious = view_yview;
-init_objdata();
+init_objdata(room);
 </string>
           </argument>
         </arguments>

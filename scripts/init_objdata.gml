@@ -1,3 +1,5 @@
+///init_objdata(room_index);
+room_index = argument0;
 obj_bag_button.x = view_xview + 550;
 obj_bag_button.y = view_yview + 424;
 obj_bag.x = view_xview + 640-238;
@@ -25,6 +27,21 @@ else if( instance_exists(obj_zhi) )
     Player.current_character = "三千院凪";
 }
 
-instance_create(NPCs.x, NPCs.y, obj_hitbox);
-NPCs.dialoge_bubble = instance_create(NPCs.x + 8, NPCs.y - 65, obj_dialoge);
-instance_deactivate_object(obj_dialoge);
+if( instance_exists(NPCs) )
+{
+    instance_create(NPCs.x, NPCs.y, obj_hitbox);
+    NPCs.dialoge_bubble = instance_create(NPCs.x + 8, NPCs.y - 65, obj_dialoge);
+    instance_deactivate_object(obj_dialoge);
+}
+
+switch( room_index )
+{
+    case rm_first:
+        Player.x = 75;
+        Player.y = 416;
+        break;
+    case rm_2:
+        Player.x = 100;
+        Player.y = 100;
+        break;
+}

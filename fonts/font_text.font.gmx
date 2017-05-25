@@ -17,8 +17,7 @@
     <range0>8220,8221</range0>
     <range0>12290,12290</range0>
     <range0>19968,19968</range0>
-    <range0>19977,19977</range0>
-    <range0>19979,19979</range0>
+    <range0>19977,19979</range0>
     <range0>19981,19982</range0>
     <range0>20010,20010</range0>
     <range0>20026,20026</range0>
@@ -26,6 +25,7 @@
     <range0>20043,20043</range0>
     <range0>20080,20080</range0>
     <range0>20102,20102</range0>
+    <range0>20116,20116</range0>
     <range0>20122,20122</range0>
     <range0>20135,20135</range0>
     <range0>20154,20154</range0>
@@ -80,7 +80,7 @@
     <range0>21463,21463</range0>
     <range0>21487,21487</range0>
     <range0>21514,21514</range0>
-    <range0>21518,21518</range0>
+    <range0>21517,21518</range0>
     <range0>21629,21629</range0>
     <range0>21697,21697</range0>
     <range0>21806,21807</range0>
@@ -104,6 +104,8 @@
     <range0>22899,22899</range0>
     <range0>22987,22987</range0>
     <range0>23068,23068</range0>
+    <range0>23380,23380</range0>
+    <range0>23383,23383</range0>
     <range0>23398,23398</range0>
     <range0>23429,23429</range0>
     <range0>23432,23432</range0>
@@ -133,6 +135,7 @@
     <range0>24577,24577</range0>
     <range0>24590,24590</range0>
     <range0>25103,25104</range0>
+    <range0>25110,25110</range0>
     <range0>25112,25112</range0>
     <range0>25159,25159</range0>
     <range0>25163,25163</range0>
@@ -207,6 +210,7 @@
     <range0>30456,30456</range0>
     <range0>30524,30524</range0>
     <range0>30643,30643</range0>
+    <range0>30693,30693</range0>
     <range0>30701,30701</range0>
     <range0>30707,30707</range0>
     <range0>30772,30772</range0>
@@ -247,6 +251,7 @@
     <range0>35746,35746</range0>
     <range0>35752,35752</range0>
     <range0>35757,35757</range0>
+    <range0>35768,35768</range0>
     <range0>35777,35777</range0>
     <range0>35797,35797</range0>
     <range0>35946,35946</range0>
@@ -256,12 +261,16 @@
     <range0>36171,36171</range0>
     <range0>36229,36229</range0>
     <range0>36275,36275</range0>
+    <range0>36824,36825</range0>
     <range0>36873,36873</range0>
     <range0>36890,36890</range0>
+    <range0>36947,36947</range0>
     <range0>36974,36974</range0>
     <range0>37027,37027</range0>
+    <range0>37322,37322</range0>
     <range0>37327,37327</range0>
     <range0>37329,37329</range0>
+    <range0>38053,38053</range0>
     <range0>38065,38065</range0>
     <range0>38108,38108</range0>
     <range0>38134,38134</range0>

@@ -39,8 +39,8 @@ global.mission[1,2] = 0;
 global.mission[1,3] = 1;
 global.mission[1,4] = 0;
 
-global.mission[2,0] = "";
-global.mission[2,1] = "";
+global.mission[2,0] = "门";
+global.mission[2,1] = "一扇不知道名字的门，上面还有五个钥匙孔，或许有人能解释这个。";
 global.mission[2,2] = 0;
 global.mission[2,3] = 1;
 global.mission[2,4] = 0;
@@ -50,12 +50,6 @@ global.mission[3,1] = "";
 global.mission[3,2] = 0;
 global.mission[3,3] = 1;
 global.mission[3,4] = 0;
-
-global.mission[2,0] = "";
-global.mission[2,1] = "";
-global.mission[2,2] = 0;
-global.mission[2,3] = 1;
-global.mission[2,4] = 0;
 
 global.mission[4,0] = "";
 global.mission[4,1] = "";

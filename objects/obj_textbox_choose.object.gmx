@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-99999</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -82,17 +82,7 @@ global.textbox_text = "";
 Player.image_speed = 0.15;
 // 结束对话后，激活所有UI
 instance_activate_object(Button);
-/*switch( global.choose_index )
-{
-    case 1:
-        if( global.choose_index == 1 )
-        {
-            global.choose_index = 0;
-            Player.image_index = 3;
-            room_goto(rm_maze);
-        }
-        break;
-}*/
+
 </string>
           </argument>
         </arguments>
@@ -178,10 +168,18 @@ if( current_position == max_position &amp;&amp; !global.endmessageplayed )
     global.endmessageplayed = true;
 }
 
-if( current_position == max_position &amp;&amp; sprite_exists(spr_choose_arrow) )
+//if( current_position == max_position &amp;&amp; sprite_exists(spr_choose_arrow) )
+if( keyboard_check_pressed( vk_enter ) || mouse_check_button_pressed(mb_left) )
 {
-    if( keyboard_check_pressed( vk_enter ) )
-    {
+    if( draw_y &gt;= 80 )
+    {  
+        // 销毁当前对话框
+        instance_destroy();  
+        // 重新创建一个新的对话框并从未显示完的地方继续显示    
+        textbox_choose(string_copy(text_entire, current_position, string_length(text_entire) - current_position+1), "", "", colour, -1);
+    }
+    if( current_position == max_position )
+    {  
         if( current_mission != -1 )
         {
             switch( arrowy )
@@ -216,7 +214,7 @@ if( current_position == max_position &amp;&amp; sprite_exists(spr_choose_arrow) 
             }
         }
     }
-        global.endmessageplayed = false;
+    global.endmessageplayed = false;
 }
 </string>
           </argument>

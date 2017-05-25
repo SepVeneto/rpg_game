@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -49,7 +49,7 @@ if( !instance_exists( obj_xiana ) &amp;&amp; !instance_exists( obj_zhi) )
     switch( global.character_index )
     {
         case 1: 
-                instance_create(64, 128, obj_xiana);
+                instance_create(75, 416, obj_xiana);
                 if( instance_exists(obj_maze_create) )
                 {
                     Player.x = 32*obj_maze_create.origin_x + 10;
@@ -57,7 +57,7 @@ if( !instance_exists( obj_xiana ) &amp;&amp; !instance_exists( obj_zhi) )
                 }
                 break;
         case 2: 
-                instance_create(64, 128, obj_zhi);
+                instance_create(75, 416, obj_zhi);
                 if( instance_exists(obj_maze_create) )
                 {
                     Player.x = 32*obj_maze_create.origin_x + 10;
