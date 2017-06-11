@@ -168,6 +168,7 @@ if( drag )
 draw_sprite(sprite_index, image_index, x, y);
 
 draw_set_font(font_text);
+draw_set_colour(c_black);
 // 窗口拖动
 draw_text(x + 10, y + 3, "人物状态");
 if( drag )

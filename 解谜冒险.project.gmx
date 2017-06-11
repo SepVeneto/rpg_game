@@ -59,6 +59,8 @@
       <sprite>sprites\spr_devil_door</sprite>
       <sprite>sprites\spr_scenery_hitbox</sprite>
       <sprite>sprites\spr_tent_hitbox</sprite>
+      <sprite>sprites\spr_transfer_hitbox</sprite>
+      <sprite>sprites\spr_log_hitbox</sprite>
     </sprites>
     <sprite>sprites\spr_choose_arrow</sprite>
     <sprites name="border">
@@ -104,16 +106,24 @@
         <sprite>sprites\river</sprite>
       </sprites>
       <sprites name="static">
-        <sprite>sprites\spr_tree1</sprite>
-        <sprite>sprites\spr_tree2</sprite>
-        <sprite>sprites\spr_tree3</sprite>
-        <sprite>sprites\spr_wood_pile</sprite>
-        <sprite>sprites\spr_stump</sprite>
-        <sprite>sprites\spr_sign</sprite>
-        <sprite>sprites\spr_notice_board</sprite>
-        <sprite>sprites\spr_campfire</sprite>
-        <sprite>sprites\spr_bucket</sprite>
-        <sprite>sprites\spr_tent</sprite>
+        <sprites name="room_2">
+          <sprite>sprites\spr_tree1</sprite>
+          <sprite>sprites\spr_tree2</sprite>
+          <sprite>sprites\spr_tree3</sprite>
+          <sprite>sprites\spr_stump</sprite>
+          <sprite>sprites\spr_sign</sprite>
+          <sprite>sprites\spr_wood_pile</sprite>
+          <sprite>sprites\spr_notice_board</sprite>
+          <sprite>sprites\spr_bucket</sprite>
+          <sprite>sprites\spr_campfire</sprite>
+          <sprite>sprites\spr_tent</sprite>
+        </sprites>
+        <sprites name="room_tent_inside">
+          <sprite>sprites\spr_money</sprite>
+          <sprite>sprites\spr_log</sprite>
+          <sprite>sprites\spr_log_break</sprite>
+          <sprite>sprites\spr_pillar</sprite>
+        </sprites>
       </sprites>
     </sprites>
   </sprites>
@@ -122,6 +132,7 @@
     <background>background\bk_background</background>
     <background>background\bg_first</background>
     <background>background\bk_room_2</background>
+    <background>background\bk_tent_inside</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -185,16 +196,32 @@
       <object>objects\obj_choose</object>
     </objects>
     <objects name="Happenbox">
-      <object>objects\obj_ChaHappenBoxXiana</object>
-      <object>objects\obj_ChaHappenBoxZhi</object>
-      <object>objects\HappenBox</object>
-      <object>objects\obj_hitbox</object>
+      <objects name="characters">
+        <objects name="players">
+          <object>objects\obj_ChaHappenBoxXiana</object>
+          <object>objects\obj_ChaHappenBoxZhi</object>
+          <object>objects\HappenBox</object>
+        </objects>
+        <objects name="npc">
+          <object>objects\obj_hitbox</object>
+        </objects>
+      </objects>
+      <objects name="room_1">
+        <object>objects\obj_bookcase_hitbox</object>
+        <object>objects\obj_channel_hitbox</object>
+        <object>objects\obj_devildoor_hitbox</object>
+      </objects>
+      <objects name="room_2">
+        <object>objects\obj_tent_hitbox</object>
+      </objects>
+      <objects name="room_tent_inside">
+        <object>objects\obj_log_hitbox</object>
+        <object>objects\obj_log_break_hitbox</object>
+        <object>objects\obj_pillar_hitbox</object>
+      </objects>
       <object>objects\obj_wall_hitbox</object>
-      <object>objects\obj_bookcase_hitbox</object>
-      <object>objects\obj_channel_hitbox</object>
-      <object>objects\obj_devildoor_hitbox</object>
       <object>objects\obj_scenery_hitbox</object>
-      <object>objects\obj_tent_hitbox</object>
+      <object>objects\obj_transfer_hitbox</object>
     </objects>
     <objects name="xiana">
       <object>objects\obj_xiana</object>
@@ -244,14 +271,16 @@
     </objects>
     <objects name="interaction_object">
       <object>objects\obj_treasure_box</object>
-      <object>objects\obj_bookcase</object>
-      <object>objects\obj_channel</object>
-      <object>objects\obj_devildoor</object>
     </objects>
     <objects name="dynamic">
       <object>objects\obj_river</object>
     </objects>
     <objects name="Scenery">
+      <objects name="room_1">
+        <object>objects\obj_bookcase</object>
+        <object>objects\obj_channel</object>
+        <object>objects\obj_devildoor</object>
+      </objects>
       <objects name="room_2">
         <object>objects\obj_tree1</object>
         <object>objects\obj_tree2</object>
@@ -264,6 +293,12 @@
         <object>objects\obj_bucket</object>
         <object>objects\obj_tent</object>
       </objects>
+      <objects name="room_tent_inside">
+        <object>objects\obj_money</object>
+        <object>objects\obj_log</object>
+        <object>objects\obj_log_break</object>
+        <object>objects\obj_pillar</object>
+      </objects>
     </objects>
     <object>objects\Character</object>
     <object>objects\Player</object>
@@ -274,8 +309,9 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_choose</room>
-    <room>rooms\rm_first</room>
+    <room>rooms\rm_1</room>
     <room>rooms\rm_2</room>
+    <room>rooms\rm_tent_inside</room>
     <room>rooms\rm_main</room>
     <room>rooms\rm_maze</room>
   </rooms>

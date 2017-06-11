@@ -1,5 +1,8 @@
-///init_objdata(room_index);
+///init_objdata(room_index, player_x, player_y, player_face);
 room_index = argument0;
+player_x = argument1;
+player_y = argument2;
+player_direction = argument3;
 obj_bag_button.x = view_xview + 550;
 obj_bag_button.y = view_yview + 424;
 obj_bag.x = view_xview + 640-238;
@@ -34,9 +37,9 @@ if( instance_exists(NPCs) )
     instance_deactivate_object(obj_dialoge);
 }
 
-switch( room_index )
+/*switch( room_index )
 {
-    case rm_first:
+    case rm_1:
         Player.x = 75;
         Player.y = 416;
         break;
@@ -44,4 +47,20 @@ switch( room_index )
         Player.x = 100;
         Player.y = 100;
         break;
-}
+    case rm_tent_inside:
+        Player.x = 320;
+        Player.y = 440;
+        if( instance_exists(obj_xiana) )
+        {
+            Player.sprite_index = spr_xiana_back;
+        }
+        else
+        {
+            Player.sprite_index = spr_zhi_back;
+        }
+        break;
+}*/
+
+Player.x = player_x;
+Player.y = player_y;
+Player.sprite_index = player_direction;

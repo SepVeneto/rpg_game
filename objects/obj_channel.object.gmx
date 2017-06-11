@@ -59,6 +59,8 @@
     {
         if( global.choose_index == 1 )
         {
+            global.temp_player_x = 100;
+            global.temp_player_y = 100;
             room_goto(rm_2);
             global.choose_index = 0;
         }

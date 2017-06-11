@@ -65,7 +65,7 @@ for( i = 0; i &lt; 36; i += 1 )
 
 // 加载物品的各种信息
 file = file_text_open_read(working_directory + "\item_data.txt");
-for( i = 1; i &lt;= 38; i += 1 )
+for( i = 1; i &lt;= 39; i += 1 )
 {
     temp_string = file_text_read_string(file)
     file_text_readln(file);

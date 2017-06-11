@@ -74,12 +74,12 @@ else
 if( mouse_in_relion(100, 85, 270, 113) &amp;&amp; mouse_check_button(mb_left) )
 {
     global.character_index = character.xiana;
-    room_goto(rm_first);
+    room_goto(rm_1);
 }
 else if( mouse_in_relion(350, 85, 520, 110) &amp;&amp; mouse_check_button(mb_left) )
 {
     global.character_index = character.zhi;
-    room_goto(rm_first);
+    room_goto(rm_1);
 }
 
 </string>
